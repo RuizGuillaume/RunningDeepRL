@@ -88,7 +88,7 @@ def run(window, width, height) -> None:
             clock.tick(fps)
     #endregion
 
-    pygame.quit()
+    pygame.quit() 
 
 
 def draw(space, window, draw_options) -> None:
@@ -101,5 +101,3 @@ def draw(space, window, draw_options) -> None:
 
 if __name__ == '__main__':
     run(window, WIDTH, HEIGHT)
-
-
