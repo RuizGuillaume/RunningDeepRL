@@ -5,6 +5,8 @@ from classes.member import Member, Bust
 class Stickman:
     def __init__(self, x, y) -> None:
         
+        self.meters_traveled :int = 0
+        self.initial_x :int = x
         #region Members init
         radius = 5
         body_friction = 1
@@ -134,7 +136,8 @@ class Stickman:
         self.lower_right_leg.shape.filter = shape_filter
         #endregion
         #endregion
-      
+        
+
 
     def draw(self, space: pymunk.Space) -> None:
 
@@ -172,3 +175,23 @@ class Stickman:
 
         member.motor.rate = rate
 
+
+    def save_meters_traveled(self, total_camera_offset) -> None:
+        
+        meters_traveled = round((self.bust.body.position[0] - self.initial_x + total_camera_offset)/100, 0)
+        if meters_traveled > self.meters_traveled : self.meters_traveled = meters_traveled
+
+
+    def shift(self, dx) -> None:
+
+        self.bust.body.position += (dx, 0)
+        self.left_arm.body.position += (dx, 0)
+        self.left_forearm.body.position += (dx, 0)
+        self.right_arm.body.position += (dx, 0)
+        self.right_forearm.body.position += (dx, 0)
+        self.upper_left_leg.body.position += (dx, 0)
+        self.lower_left_leg.body.position += (dx, 0)
+        self.upper_right_leg.body.position += (dx, 0)
+        self.lower_right_leg.body.position += (dx, 0)
+
+        
