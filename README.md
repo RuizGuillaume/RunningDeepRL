@@ -1,4 +1,4 @@
-# Presentation and Installation
+# RunningDeepRL - Work In Progress
 
 This repository contains the code for the project "RunningDeeRL", developed by :
 - Ruiz Guillaume ([GitHub](https://github.com/RuizGuillaume) / [LinkedIn](https://www.linkedin.com/in/ruizguillaume/))
